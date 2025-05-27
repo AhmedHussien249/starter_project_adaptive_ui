@@ -9,7 +9,7 @@ class CustomDrawer extends StatelessWidget {
 
   static const List<DrawerItemModel> drawerItems =  [
     DrawerItemModel(title: 'D A S H B O A R D', icon: Icons.home),
-    DrawerItemModel(title: 'S I T T I N G', icon: Icons.settings),
+    DrawerItemModel(title: 'S E T T I N G S', icon: Icons.settings),
     DrawerItemModel(title: 'A B O U T', icon: Icons.info),
     DrawerItemModel(title: 'L O G O U T', icon: Icons.logout),
   ];
@@ -18,14 +18,16 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Drawer(
       backgroundColor: Color(0xffDBDBDB),
+      elevation: 0,
       child: Column(
         children: [
           DrawerHeader(
             child: Icon(
               FontAwesomeIcons.solidHeart,
-              size: 48,
+              size: 56,
             ),
           ),
+          SizedBox(height: 16),
           CustomDrawerItemListView(drawerItems: drawerItems),
         ],
       ),

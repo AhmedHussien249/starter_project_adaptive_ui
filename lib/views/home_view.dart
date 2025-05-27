@@ -18,16 +18,41 @@ class _HomeViewState extends State<HomeView> {
         key: scaffoldKey,
         backgroundColor: const Color(0xFFDBDBDB),
         drawer: const CustomDrawer(),
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          iconTheme: const IconThemeData(color: Colors.white),
-          leading: IconButton(
-            onPressed: () {
-              scaffoldKey.currentState?.openDrawer();
-            },
-            icon: const Icon(Icons.menu),
-          ),
-        ),
+        appBar:// MediaQuery.of(context).size.width < 900
+      MediaQuery.sizeOf(context).width < 900
+            ? AppBar(
+                backgroundColor: Colors.black,
+                iconTheme: const IconThemeData(color: Colors.white),
+                leading: IconButton(
+                  onPressed: () {
+                    scaffoldKey.currentState?.openDrawer();
+                  },
+                  icon: const Icon(Icons.menu),
+                ),
+              )
+            : null,
         body: const HomeViewBody());
   }
 }
+// class CustomAdaptiveAppBar extends StatelessWidget implements PreferredSizeWidget {
+//   const CustomAdaptiveAppBar({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return LayoutBuilder(
+//       builder: (context, constraints) => constraints.maxWidth <900 ? AppBar(
+//         backgroundColor: Colors.black,
+//         iconTheme: const IconThemeData(color: Colors.white),
+//         leading: IconButton(
+//           onPressed: () {
+//             scaffoldKey.currentState?.openDrawer();
+//           },
+//           icon: const Icon(Icons.menu),
+//         ),
+//       ):const SizedBox()
+//     );
+//   }
+//
+//   @override
+//   Size get preferredSize => const Size.fromHeight(56);
+// }
