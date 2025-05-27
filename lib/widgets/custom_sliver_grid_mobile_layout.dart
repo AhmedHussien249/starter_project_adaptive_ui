@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'custom_item.dart';
 
-class CustomSliverGrid extends StatelessWidget {
-  const CustomSliverGrid({super.key});
+class CustomSliverGridMobileLayout extends StatelessWidget {
+  const CustomSliverGridMobileLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
+    return SliverGrid.builder(
       itemCount: 4,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
